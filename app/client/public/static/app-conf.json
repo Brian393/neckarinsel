@@ -68,7 +68,7 @@
         "type": "XYZ",
         "name": "carto_light",
         "group": "neckar",
-        "url": "https://{a-d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        "url": "https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_grau/default/WEBMERCATOR/{z}/{y}/{x}.png",
         "minResolution": 0.1,
         "maxResolution": 64000,
         "zIndex": 1000,

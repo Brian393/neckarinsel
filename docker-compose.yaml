@@ -45,7 +45,8 @@ services:
       - MAXIMUM_MEMORY=${MAXIMUM_MEMORY}
       - GEOSERVER_ADMIN_USER=${GEOSERVER_ADMIN_USER}
       - GEOSERVER_ADMIN_PASSWORD=${GEOSERVER_ADMIN_PASSWORD}
-      - COMMUNITY_EXTENSIONS=backup-restore-plugin
+      - STABLE_EXTENSIONS=mbstyle-plugin
+      - COMMUNITY_EXTENSIONS=backup-restore-plugin,mbtiles-store-plugin
     labels:
       - "traefik.enable=true"
       - "traefik.http.services.${COMPOSE_PROJECT_NAME}_geoserver.loadBalancer.server.port=8080"
