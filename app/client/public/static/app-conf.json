@@ -13,7 +13,9 @@
     "projectWebsite": "",
     "color": {
       "primary": "#382a8c",
-      "secondary": "#2a8c38"
+      "secondary": "#2a8c38",
+      "link": "#ff0000",
+      "mapLink": "#7C2CA3"
     },
     "font": {
       "url": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap",
@@ -35,7 +37,10 @@
     "navbar": {
       "dropdownMenu": false
     },
-    "customNavigationScheme": "1"
+    "customNavigationScheme": "1",
+    "spotlightMessage": {
+      "isVisible": true
+    }
   },
   "map": {
     "projectionCode": "EPSG:3857",
@@ -167,6 +172,31 @@
         "opacity": 0.9,
         "queryable": false,
         "visible": false
+      },
+      {
+        "type": "VECTOR",
+        "name": "html_posts",
+        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:html_posts&outputFormat=application/json&srsname=EPSG:3857",
+        "queryable": true,
+        "displayInLegend": true,
+        "legendDisplayName": {
+          "en": "Posts",
+          "es": "Publicaciones",
+          "pt": "Publicações"
+        },
+        "format": "GeoJSON",
+        "visible": true,
+        "zIndex": 1002,
+        "minResolution": 0.5,
+        "maxResolution": 64000,
+        "label": null,
+        "hoverable": true,
+        "canEdit": false,
+        "style": {
+          "styleRef": "htmlLayerStyle",
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "#000000"
+        }
       },
       {
         "type": "VECTOR",
@@ -332,15 +362,17 @@
             "spotlight",
             "points",
             "lines",
+            "videos",
             "photos",
-            "videos"
+            "html_posts"
           ],
-          "center": [9.136, 48.776],
-          "resolution": 40,
-          "mobileCenter": [9.136, 48.776],
-          "mobileResolution": 80,
-          "minResolution": 0.1,
-          "maxResolution": 64000
+          "center": [-87.473, 41.74],
+          "resolution": 60,
+          "mobileResolution": 120,
+          "mobileCenter": [-87.5, 41.663],
+          "minResolution": 0,
+          "maxResolution": 64000,
+          "backgroundColor": "#f5efe9"
         },
         "local": {
           "layers": [],
@@ -348,7 +380,8 @@
           "resolution": 2000,
           "mobileResolution": 16000,
           "minResolution": 0,
-          "maxResolution": 64000
+          "maxResolution": 64000,
+          "backgroundColor": "red"
         },
         "global": {
           "layers": [],
