@@ -325,15 +325,7 @@
     "groups": {
       "neckar": {
         "default": {
-          "layers": [
-            "ESRI-World-Imagery",
-            "stut_tiles",
-            "polygons",
-            "points",
-            "lines",
-            "photos",
-            "videos"
-          ],
+          "layers": ["ESRI-World-Imagery", "stut_tiles", "polygons", "points", "lines", "photos", "videos"],
           "center": [9.136, 48.776],
           "resolution": 40,
           "mobileCenter": [9.136, 48.776],
