@@ -1,19 +1,19 @@
 {
   "app": {
     "title": {
-      "en": "The Neckar",
-      "de": "Der Neckar",
-      "es": "Río Neckar"
+      "en": "Neckarinsel",
+      "de": "Neckarinsel",
+      "es": "Neckarinsel"
     },
     "tagline": {
-      "en": "Pasts & Futures",
-      "es": "Pasados y Futuros",
-      "de": "Vergangenheit und Zukunft"
+      "en": "Critical Nass",
+      "es": "Critical Nass",
+      "de": "Critical Nass"
     },
     "projectWebsite": "",
     "color": {
-      "primary": "#382a8c",
-      "secondary": "#2a8c38",
+      "primary": "#89a6e0",
+      "secondary": "#7a17da",
       "link": "#ff0000",
       "mapLink": "#7C2CA3"
     },
@@ -31,7 +31,7 @@
     },
     "sideBar": {
       "isVisible": true,
-      "backgroundColor": "#376950",
+      "backgroundColor": "#8e7b5d",
       "textColor": "white"
     },
     "navbar": {
@@ -39,13 +39,13 @@
     },
     "customNavigationScheme": "1",
     "spotlightMessage": {
-      "isVisible": true
+      "isVisible": false
     }
   },
   "map": {
     "projectionCode": "EPSG:3857",
     "minZoom": 1,
-    "maxZoom": 19,
+    "maxZoom": 20,
     "zoom": 1,
     "geoserverWorkspace": "workspace1",
     "resolutions": [
@@ -57,30 +57,41 @@
     "maxResolution": 64000,
     "layers": [
       {
-        "type": "XYZ",
-        "name": "osm_bright",
-        "group": "neckar",
-        "url": "https://neckar-fluss.s3.eu-north-1.amazonaws.com/assets/tiles/osm_bright/{z}/{x}/{y}.png",
-        "minResolution": 0.1,
-        "maxResolution": 64000,
-        "zIndex": 1000,
+        "type": "VECTOR",
+        "name": "html_posts",
+        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:html_posts&outputFormat=application/json&srsname=EPSG:3857",
+        "queryable": true,
         "displayInLegend": true,
-        "legendDisplayName": "OSM Bright",
-        "opacity": 0.99,
-        "visible": true
+        "legendDisplayName": {
+          "en": "Posts",
+          "es": "Posts",
+          "de": "Posts"
+        },
+        "format": "GeoJSON",
+        "visible": true,
+        "zIndex": 1002,
+        "minResolution": 0.5,
+        "maxResolution": 64000,
+        "label": null,
+        "hoverable": true,
+        "canEdit": false,
+        "style": {
+          "styleRef": "htmlLayerStyle",
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "#000000"
+        }
       },
       {
         "type": "XYZ",
-        "name": "carto_light",
-        "group": "neckar",
-        "url": "https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_grau/default/WEBMERCATOR/{z}/{y}/{x}.png",
-        "minResolution": 0.1,
+        "name": "stut_tiles",
+        "group": "background",
+        "url": "https://neckarinsel.ecotopia.today/geoserver/gwc/service/tms/1.0.0/workspace1:stutt_trans@EPSG%3A900913@png/{z}/{x}/{-y}.png",
+        "minResolution": 0.25,
         "maxResolution": 64000,
-        "zIndex": 1000,
         "displayInLegend": true,
-        "legendDisplayName": "CartoDB Positron",
-        "opacity": 1,
-        "visible": true
+        "visible": true,
+        "legendDisplayName": "Stuttgart tiles",
+        "opacity": 0.99
       },
       {
         "type": "GROUP",
@@ -121,19 +132,6 @@
       },
       {
         "type": "XYZ",
-        "name": "circle_tiles",
-        "group": "neckar",
-        "url": "https://neckar-fluss.s3.eu-north-1.amazonaws.com/assets/tiles/circle_tiles/{z}/{x}/{y}.png",
-        "minResolution": 0.1,
-        "maxResolution": 80,
-        "displayInLegend": true,
-        "legendDisplayName": "Stuttgart Area",
-        "opacity": 0.99,
-        "queryable": false,
-        "visible": false
-      },
-      {
-        "type": "XYZ",
         "name": "spotlight",
         "group": "neckar",
         "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
@@ -153,7 +151,7 @@
         "srs": "EPSG:25832",
         "group": "neckar",
         "minResolution": 0.1,
-        "maxResolution": 1,
+        "maxResolution": 2,
         "displayInLegend": true,
         "legendDisplayName": "Spotlight",
         "opacity": 1,
@@ -165,38 +163,13 @@
         "name": "ESRI-World-Imagery",
         "group": "neckar",
         "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "minResolution": 0.1,
+        "minResolution": 0.5,
         "maxResolution": 68000,
         "displayInLegend": true,
         "legendDisplayName": "Satellite Image",
         "opacity": 0.9,
         "queryable": false,
         "visible": false
-      },
-      {
-        "type": "VECTOR",
-        "name": "html_posts",
-        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:html_posts&outputFormat=application/json&srsname=EPSG:3857",
-        "queryable": true,
-        "displayInLegend": true,
-        "legendDisplayName": {
-          "en": "Posts",
-          "es": "Publicaciones",
-          "pt": "Publicações"
-        },
-        "format": "GeoJSON",
-        "visible": true,
-        "zIndex": 1002,
-        "minResolution": 0.5,
-        "maxResolution": 64000,
-        "label": null,
-        "hoverable": true,
-        "canEdit": false,
-        "style": {
-          "styleRef": "htmlLayerStyle",
-          "hoverTextColor": "white",
-          "hoverBackgroundColor": "#000000"
-        }
       },
       {
         "type": "VECTOR",
@@ -354,29 +327,24 @@
         "default": {
           "layers": [
             "ESRI-World-Imagery",
-            "carto_light",
-            "neckar_watershed",
-            "circle_tiles",
-            "osm_bright",
+            "stut_tiles",
             "polygons",
-            "spotlight",
             "points",
             "lines",
-            "videos",
             "photos",
-            "html_posts"
+            "videos"
           ],
-          "center": [-87.473, 41.74],
-          "resolution": 60,
-          "mobileResolution": 120,
-          "mobileCenter": [-87.5, 41.663],
-          "minResolution": 0,
+          "center": [9.136, 48.776],
+          "resolution": 40,
+          "mobileCenter": [9.136, 48.776],
+          "mobileResolution": 80,
+          "minResolution": 0.1,
           "maxResolution": 64000,
-          "backgroundColor": "#f5efe9"
+          "backgroundColor": "#b0bddd"
         },
         "local": {
           "layers": [],
-          "center": [-88.179, 41.837],
+          "center": [],
           "resolution": 2000,
           "mobileResolution": 16000,
           "minResolution": 0,
@@ -385,7 +353,7 @@
         },
         "global": {
           "layers": [],
-          "center": [-12.42, 29.84],
+          "center": [],
           "resolution": 68000,
           "mobileResolution": 80000,
           "minResolution": 0,
@@ -401,9 +369,9 @@
     "defaultActiveGroup": "neckar",
     "groupTitles": {
       "neckar": {
-        "en": "Urbanized Watershed",
-        "es": "Cuenca Urbanizada",
-        "de": "Urbanisierte Wasserscheide"
+        "en": "Touch the River",
+        "es": "Touch the River",
+        "de": "Touch the River"
       }
     },
     "regionTitles": {
