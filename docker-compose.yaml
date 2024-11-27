@@ -176,4 +176,6 @@ services:
       - geoserver
     volumes:
       - ./app/mapproxy:/mapproxy
+      - ./app/mapproxy/cache_data:/mapproxy/cache_data
+      - ./app/mapproxy/data:/mapproxy/data
     restart: on-failure
