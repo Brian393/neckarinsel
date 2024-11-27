@@ -45,8 +45,7 @@ services:
       - MAXIMUM_MEMORY=${MAXIMUM_MEMORY}
       - GEOSERVER_ADMIN_USER=${GEOSERVER_ADMIN_USER}
       - GEOSERVER_ADMIN_PASSWORD=${GEOSERVER_ADMIN_PASSWORD}
-      - STABLE_EXTENSIONS=mbstyle-plugin
-      - COMMUNITY_EXTENSIONS=backup-restore-plugin,mbtiles-store-plugin
+      - COMMUNITY_EXTENSIONS=backup-restore-plugin
     labels:
       - "traefik.enable=true"
       - "traefik.http.services.${COMPOSE_PROJECT_NAME}_geoserver.loadBalancer.server.port=8080"
@@ -176,6 +175,4 @@ services:
       - geoserver
     volumes:
       - ./app/mapproxy:/mapproxy
-      - ./app/mapproxy/cache_data:/mapproxy/cache_data
-      - ./app/mapproxy/data:/mapproxy/data
     restart: on-failure

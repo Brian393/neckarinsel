@@ -85,13 +85,30 @@
         "type": "XYZ",
         "name": "stut_tiles",
         "group": "background",
-        "url": "https://neckarinsel.ecotopia.today/geoserver/gwc/service/tms/1.0.0/workspace1:stutt_trans@EPSG%3A900913@png/{z}/{x}/{-y}.png",
+        "url": "https://neckarinsel.ecotopia.today/geoserver/gwc/service/tms/1.0.0/workspace1:transparent_stutt@EPSG%3A900913@png/{z}/{x}/{-y}.png",
         "minResolution": 0.25,
         "maxResolution": 64000,
         "displayInLegend": true,
         "visible": true,
         "legendDisplayName": "Stuttgart tiles",
         "opacity": 0.99
+      },
+      {
+        "type": "XYZ",
+        "name": "osm",
+        "group": "media",
+        "url": "https://mapproxy.crystalball.timetochange.today/wmts/osm_bright/osm_bright_grid/{z}/{x}/{y}.png",
+        "minResolution": 0.25,
+        "maxResolution": 64000,
+        "queryable": false,
+        "displayInLegend": true,
+        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/osm.png",
+        "legendDisplayName": {
+          "en": "OpenStreetMap",
+          "es": "OpenStreetMap",
+          "pt": "OpenStreetMap"
+        },
+        "visible": true
       },
       {
         "type": "GROUP",
@@ -325,7 +342,7 @@
     "groups": {
       "neckar": {
         "default": {
-          "layers": ["ESRI-World-Imagery", "stut_tiles", "polygons", "points", "lines", "photos", "videos"],
+          "layers": ["ESRI-World-Imagery", "osm", "stut_tiles", "polygons", "points", "lines", "photos", "videos"],
           "center": [9.136, 48.776],
           "resolution": 40,
           "mobileCenter": [9.136, 48.776],
