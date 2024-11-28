@@ -41,7 +41,7 @@
             $appConfig.app.title
           }}
         </v-toolbar-title>
-        <v-btn small depressed fab color="gray" class="ml-0" @click="goToHome()">
+        <v-btn small depressed fab color="#00bd9c" class="ml-0" @click="goToHome()">
           <v-icon small>fas fa-home</v-icon>
         </v-btn>
 

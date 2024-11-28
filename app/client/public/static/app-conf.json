@@ -12,7 +12,7 @@
     },
     "projectWebsite": "",
     "color": {
-      "primary": "#89a6e0",
+      "primary": "#9a28bd",
       "secondary": "#7a17da",
       "link": "#ff0000",
       "mapLink": "#7C2CA3"
@@ -31,8 +31,8 @@
     },
     "sideBar": {
       "isVisible": true,
-      "backgroundColor": "#8e7b5d",
-      "textColor": "white"
+      "backgroundColor": "#bd9a28",
+      "textColor": "#9c27b9"
     },
     "navbar": {
       "dropdownMenu": false
@@ -390,13 +390,13 @@
             "photos",
             "videos"
           ],
-          "center": [9.166, 48.796],
-          "resolution": 26,
-          "mobileCenter": [9.177, 48.806],
-          "mobileResolution": 60,
+          "center": [9.174, 48.802],
+          "resolution": 20,
+          "mobileCenter": [9.207, 48.810],
+          "mobileResolution": 36,
           "minResolution": 0.1,
           "maxResolution": 64000,
-          "backgroundColor": "#b0bddd"
+          "backgroundColor": "#00bd9e"
         },
         "local": {
           "layers": [],
