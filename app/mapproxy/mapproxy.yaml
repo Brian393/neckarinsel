@@ -1,3 +1,5 @@
+
+
 services:
 
  #sets up how to make the source data available
@@ -35,13 +37,6 @@ layers:
 
    sources: [osm_bright_cache] # This layer uses the osm_bright_cache defined below.
 
- # New layer for MBTiles
- - name: transparent_stutt
-
-   title: Transparent Stuttgart Layer
-
-   sources: [transparent_stutt_cache] # This layer uses the transparent_stutt_cache defined below.
-
 
 caches:
 
@@ -59,15 +54,6 @@ caches:
    grids: [osm_bright_grid]
 
    sources: [osm_bright_source] # Here you set what source data (defined below) you want to cache
-
-   format: image/png
-
- # New cache for MBTiles
- transparent_stutt_cache:
-
-   grids: [osm_bright_grid]
-
-   sources: [transparent_stutt_source] # This cache uses the transparent_stutt_source defined below.
 
    format: image/png
 
@@ -99,14 +85,6 @@ sources:
 
      grid: osm_bright_grid_reverse
 
- # New source for MBTiles
-  transparent_stutt_cache:
-  grids: [osm_bright_grid]
-  sources: [transparent_stutt_source]
-  format: image/png
-  image:
-    transparent: true
-    resampling_method: bilinear
 
 grids:
 
