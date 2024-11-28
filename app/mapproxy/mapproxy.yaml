@@ -37,13 +37,6 @@ layers:
    sources: [osm_bright_cache] # This layer uses the osm_bright_cache defined below.
 
 
- - name: transparent_stutt
-
-   title: Transparent Stuttgart Layer
-
-   sources: [transparent_stutt_cache]
-
-
 
 caches:
 
@@ -63,15 +56,6 @@ caches:
    sources: [osm_bright_source] # Here you set what source data (defined below) you want to cache
 
    format: image/png
-
- transparent_stutt_cache:
-
-   grids: [osm_bright_grid]
-
-   sources: [transparent_stutt_source]
-
-   format: image/png
-
 
 
 sources:
@@ -101,13 +85,6 @@ sources:
 
      grid: osm_bright_grid_reverse
      
-
-  transparent_stutt_source:
-
-     type: mbtiles
-
-     filename: /mapproxy/data/transparent_stutt.mbtiles
-
 
 grids:
 
