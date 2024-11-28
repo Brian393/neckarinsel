@@ -379,7 +379,17 @@
     "groups": {
       "neckar": {
         "default": {
-          "layers": ["ESRI-World-Imagery", "luftbild_aktuell", "stuttgart_map", "rivertiles", "polygons", "points", "lines", "photos", "videos"],
+          "layers": [
+            "ESRI-World-Imagery",
+            "luftbild_aktuell",
+            "stuttgart_map",
+            "rivertiles",
+            "polygons",
+            "points",
+            "lines",
+            "photos",
+            "videos"
+          ],
           "center": [9.166, 48.796],
           "resolution": 26,
           "mobileCenter": [9.177, 48.806],
