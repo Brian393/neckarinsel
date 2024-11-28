@@ -31,8 +31,8 @@
     },
     "sideBar": {
       "isVisible": true,
-      "backgroundColor": "#bd9a28",
-      "textColor": "#9c27b9"
+      "backgroundColor": "#d2b56d",
+      "textColor": "#811f99"
     },
     "navbar": {
       "dropdownMenu": false
@@ -128,7 +128,7 @@
         "displayInLegend": true,
         "visible": true,
         "legendDisplayName": "Stuttgart tiles",
-        "opacity": 0.99
+        "opacity": 0.69
       },
       {
         "type": "XYZ",
@@ -390,13 +390,13 @@
             "photos",
             "videos"
           ],
-          "center": [9.174, 48.802],
-          "resolution": 20,
+          "center": [9.212, 48.802],
+          "resolution": 3,
           "mobileCenter": [9.207, 48.81],
           "mobileResolution": 36,
           "minResolution": 0.1,
           "maxResolution": 64000,
-          "backgroundColor": "#00bd9e"
+          "backgroundColor": "#81d6a4"
         },
         "local": {
           "layers": [],
@@ -425,9 +425,9 @@
     "defaultActiveGroup": "neckar",
     "groupTitles": {
       "neckar": {
-        "en": "Touch the River",
-        "es": "Touch the River",
-        "de": "Touch the River"
+        "en": "Feel the River",
+        "es": "Feel the River",
+        "de": "Feel the River"
       }
     },
     "regionTitles": {
