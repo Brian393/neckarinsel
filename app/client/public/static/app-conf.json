@@ -392,7 +392,7 @@
           ],
           "center": [9.174, 48.802],
           "resolution": 20,
-          "mobileCenter": [9.207, 48.810],
+          "mobileCenter": [9.207, 48.81],
           "mobileResolution": 36,
           "minResolution": 0.1,
           "maxResolution": 64000,
