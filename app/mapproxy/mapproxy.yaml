@@ -70,7 +70,7 @@ sources:
 
      req:
 
-       url: https://geoserver.stuttgart.de/geoserver/Base/wms
+       url: https://geoserver.stuttgart.de/geoserver/workspace1/wms
 
        layers: A62_Luftbild_2023_EPSG25832
 
