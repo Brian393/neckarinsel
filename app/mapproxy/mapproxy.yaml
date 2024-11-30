@@ -86,7 +86,7 @@ sources:
 
      req:
 
-       url: https://crystalball.timetochange.today/geoserver/workspace1/ows
+       url: http://crystalball.timetochange.today/geoserver/workspace1/ows
 
        layers: glri_projects
 
