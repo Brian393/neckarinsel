@@ -108,7 +108,7 @@
         "format": "GeoJSON",
         "visible": true,
         "zIndex": 1002,
-        "minResolution": 0.5,
+        "minResolution": 0.1,
         "maxResolution": 64000,
         "label": null,
         "hoverable": true,
@@ -129,7 +129,7 @@
         "displayInLegend": true,
         "visible": true,
         "legendDisplayName": "Stuttgart tiles",
-        "opacity": 0.69
+        "opacity": 0.99
       },
       {
         "type": "XYZ",
