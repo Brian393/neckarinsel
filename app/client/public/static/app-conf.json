@@ -10,12 +10,12 @@
       "es": "Critical Nass",
       "de": "Critical Nass"
     },
-    "projectWebsite": "",
+    "projectWebsite": "https://www.neckarinsel.eu/de",
     "color": {
       "primary": "#9a28bd",
       "secondary": "#7a17da",
-      "link": "#ff0000",
-      "mapLink": "#7C2CA3"
+      "link": "#0000EE",
+      "mapLink": "#29a15a"
     },
     "font": {
       "url": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap",
@@ -60,7 +60,7 @@
         "type": "XYZ",
         "name": "luftbild_aktuell",
         "group": "neckar",
-        "url": "https://mapproxy.neckarinsel.ecotopia.today/wmts/luftbild/osm_bright_grid/{z}/{x}/{y}.png",
+        "url": "https://mapproxy.crystalball.timetochange.today/wmts/luftbild/osm_bright_grid/{z}/{x}/{y}.png",
         "minResolution": 0.1,
         "maxResolution": 1,
         "displayInLegend": true,
@@ -135,7 +135,7 @@
         "type": "XYZ",
         "name": "osm",
         "group": "media",
-        "url": "https://mapproxy.neckarinsel.ecotopia.today/wmts/osm_bright/osm_bright_grid/{z}/{x}/{y}.png",
+        "url": "https://mapproxy.crystalball.timetochange.today/wmts/osm_bright/osm_bright_grid/{z}/{x}/{y}.png",
         "minResolution": 0.25,
         "maxResolution": 64000,
         "queryable": false,
@@ -254,6 +254,37 @@
           "stylePropFnRef": {
             "strokeColor": "strokeColor",
             "fillColor": "fillColor"
+          },
+          "hoverTextColor": "white",
+          "hoverBackgroundColor": "#000000"
+        }
+      },
+      {
+        "type": "VECTOR",
+        "name": "river_access",
+        "url": "./geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typename=workspace1:river_access&outputFormat=application/json&srsname=EPSG:3857",
+        "group": "neckar",
+        "queryable": true,
+        "legendDisplayName": {
+          "en": "River access",
+          "es": "River access",
+          "de": "River access"
+        },
+        "format": "GeoJSON",
+        "visible": true,
+        "displayInLegend": true,
+        "displaySidebarInfo": true,
+        "zIndex": 1000,
+        "minResolution": 0.1,
+        "maxResolution": 64000,
+        "label": false,
+        "hoverable": true,
+        "legendIcon": "https://crystal-demo.s3.us-east-2.amazonaws.com/assets/icons/line.png",
+        "style": {
+          "type": "line",
+          "stylePropFnRef": {
+            "strokeColor": "strokeColor",
+            "strokeWidth": "strokeWidth"
           },
           "hoverTextColor": "white",
           "hoverBackgroundColor": "#000000"
@@ -381,19 +412,14 @@
       "neckar": {
         "default": {
           "layers": [
-            "ESRI-World-Imagery",
             "luftbild_aktuell",
-            "osm",
             "stuttgart_map",
             "rivertiles",
-            "polygons",
-            "points",
-            "lines",
-            "photos",
-            "videos"
+            "river_access",
+            "html_posts"
           ],
-          "center": [9.212, 48.802],
-          "resolution": 3,
+          "center": [9.207, 48.803],
+          "resolution": 12,
           "mobileCenter": [9.207, 48.81],
           "mobileResolution": 36,
           "minResolution": 0.1,
