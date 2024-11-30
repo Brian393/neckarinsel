@@ -411,13 +411,7 @@
     "groups": {
       "neckar": {
         "default": {
-          "layers": [
-            "luftbild_aktuell",
-            "stuttgart_map",
-            "rivertiles",
-            "river_access",
-            "html_posts"
-          ],
+          "layers": ["luftbild_aktuell", "stuttgart_map", "rivertiles", "river_access", "html_posts"],
           "center": [9.207, 48.803],
           "resolution": 12,
           "mobileCenter": [9.207, 48.81],
