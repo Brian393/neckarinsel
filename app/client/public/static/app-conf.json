@@ -63,6 +63,7 @@
         "url": "./geoserver/gwc/service/tms/1.0.0/workspace1:luftbild_aktuell@EPSG%3A900913@png/{z}/{x}/{-y}.png",
         "minResolution": 0.1,
         "maxResolution": 1,
+        "displayInLegend": true,
         "legendDisplayName": "Luftbild",
         "opacity": 0.99,
         "visible": true
@@ -382,6 +383,7 @@
           "layers": [
             "ESRI-World-Imagery",
             "luftbild_aktuell",
+            "osm",
             "stuttgart_map",
             "rivertiles",
             "polygons",
