@@ -20,3 +20,5 @@ cache_data
 .env
 _volume_*
 .pnpm-debug.log
+app/mapproxy/data/
+
