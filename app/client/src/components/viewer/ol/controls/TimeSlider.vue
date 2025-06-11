@@ -15,14 +15,14 @@
           :color="color"
           :step="1"
           ticks
-          :value="timeSeriesLayer.get('activeLayerIndex') || timeSeriesLayer.get('defaultSeriesLayerIndex') || 0"
+          :value="timeSeriesLayer.get('activeLayerIndex') ?? timeSeriesLayer.get('defaultSeriesLayerIndex') ?? 0"
           track-color="grey"
           :max="timeSeriesLayer.getLayers().getArray().length - 1"
           @change="activateTimeSeriesLayer($event, timeSeriesLayer)"
           hide-details
           center-affix
         >
-          <template v-slot:prepend>
+          <template v-slot:prepend v-if="timeSeriesLayer.get('playButton') !== false">
             <v-btn
               v-if="!timeSeriesLayer.get('isPlayDisabled')"
               :color="color"
@@ -33,7 +33,7 @@
               icon
               @click="isPlaying ? stop() : play()"
             >
-              <v-icon>{{ isPlaying ? 'mdi-pause' : 'mdi-play' }}</v-icon>
+              <v-icon>{{ isPlaying ? 'mdi-pause' : 'fas fa-play-circle' }}</v-icon>
             </v-btn>
           </template>
           <template v-slot:append>
@@ -63,6 +63,7 @@
 </template>
 <script>
 import {mapGetters} from 'vuex';
+import {mapFields} from 'vuex-map-fields';
 import {Mapable} from '../../../../mixins/Mapable';
 
 export default {
@@ -145,16 +146,24 @@ export default {
     ...mapGetters('map', {
       layers: 'layers',
     }),
+    ...mapFields('map', {
+      lastSelectedLayer: 'lastSelectedLayer',
+    }),
     timeSeriesLayer() {
       if (!this.layers) {
         return null;
+      }
+      if (this.lastSelectedLayer) {
+        const selectedLayer = this.layers[this.lastSelectedLayer];
+        if (selectedLayer && selectedLayer.get('displaySeries') && selectedLayer.get('largeSlider')) {
+          return selectedLayer;
+        }
       }
       for (const layer of Object.values(this.layers)) {
         if (layer.get('displaySeries') && layer.get('largeSlider')) {
           return layer;
         }
       }
-
       return null;
     },
   },
