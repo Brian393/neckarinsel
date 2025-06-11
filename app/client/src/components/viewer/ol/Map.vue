@@ -659,7 +659,8 @@ export default {
           return styles;
         });
       }
-      this.popup.highlightLayer.getSource().addFeature(clonedFeature);
+      /** This comments out the highlight overlay */
+      /** this.popup.highlightLayer.getSource().addFeature(clonedFeature); */
       if (!['Point', 'MultiPoint'].includes(geometry.getType())) {
         // Zoom to extent adding a padding to the extent
         this.previousMapPosition = {
