@@ -573,7 +573,15 @@
     "groups": {
       "neckar": {
         "default": {
-          "layers": ["aerials", "stuttgart_map", "riverbanks", "river_access", "water_visibility", "infrastructure", "html_posts"],
+          "layers": [
+            "aerials",
+            "stuttgart_map",
+            "riverbanks",
+            "river_access",
+            "water_visibility",
+            "infrastructure",
+            "html_posts"
+          ],
           "center": [9.207, 48.803],
           "resolution": 12,
           "mobileCenter": [9.207, 48.81],
